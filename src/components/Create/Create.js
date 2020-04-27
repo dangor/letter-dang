@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Create.css';
 import { CircularProgress, Grid } from '@material-ui/core';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { createGame } from '../../lib/game.js'
 
 function content(gameId) {
