@@ -23,7 +23,9 @@ function Game() {
 
   useEffect(() => {
     doesGameExist().then((valid) => {
-      setGameValid(valid);
+      if (!valid) {
+        setGameValid(valid);
+      }
     })
   }, []);
 

@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import * as firebaseui from 'firebaseui';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCmxJ2QC3Sk-Nn8udObDTZa4VUvdkYic3U",
@@ -11,6 +12,10 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
 
-export { db };
+const auth = firebase.auth();
+const authUi = new firebaseui.auth.AuthUI(auth);
+const db = firebase.database();
+const emailAuthProvider = firebase.auth.EmailAuthProvider.PROVIDER_ID;
+
+export { auth, authUi, db, emailAuthProvider };
